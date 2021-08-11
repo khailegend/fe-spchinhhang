@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { makeStyles, Theme } from '@material-ui/core/styles';
 import ReorderIcon from '@material-ui/icons/Reorder';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
