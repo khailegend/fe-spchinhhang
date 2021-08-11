@@ -41,5 +41,5 @@ export default function ProductCard() {
         </Button>
       </CardActions>
     </StyledCard>
-    )
+  )
 }

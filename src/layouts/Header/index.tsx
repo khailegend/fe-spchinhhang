@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Catalog from './Catalog';
 const HeaderWrapped = styled.div`
-  background: cornflowerblue;
-  padding: 15px;
+  background: #1A94FF;
+  padding: 25px;
 `
 
 export default function Header() {
   return (
     <HeaderWrapped>
-      This is header
+      <Catalog></Catalog>
     </HeaderWrapped>
   );
 }

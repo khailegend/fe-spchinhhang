@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import ProductCard from '../components/ProductCard';
 
-
 const StyledButton = styled(Button)`
   color: blueviolet;
 `
@@ -18,7 +17,6 @@ const IndexPage: NextPage = () => {
       </Alert>
 
       <StyledButton variant="contained">Click me</StyledButton>
-
       <ProductCard />
     </>
   )
