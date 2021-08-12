@@ -1,14 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { makeStyles, Theme } from "@material-ui/core/styles";
 import ReorderIcon from "@material-ui/icons/Reorder";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-
-const useStyles = makeStyles((theme: Theme) => ({
-  listIcon: {
-    fontSize: 10,
-  },
-}));
 
 const CatalogWrapped = styled.div`
   color: white;
@@ -31,8 +24,13 @@ const BigTitle = styled.span`
   font-size: 13px;
 `;
 
+const IconDropDown = styled(ArrowDropDownIcon)`
+  && {
+    font-size: 15px;
+  }
+`;
+
 export default function Catalog() {
-  const classes = useStyles();
   return (
     <CatalogWrapped>
       <LogoCatalog>
@@ -40,7 +38,7 @@ export default function Catalog() {
         <TitleCatalog>
           <SmallTitle>Danh mục </SmallTitle>
           <BigTitle>
-            Danh mục Sản phẩm <ArrowDropDownIcon className={classes.listIcon} />
+            Sản phẩm <IconDropDown />
           </BigTitle>
         </TitleCatalog>
       </LogoCatalog>
