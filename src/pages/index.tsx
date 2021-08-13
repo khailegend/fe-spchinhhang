@@ -4,16 +4,22 @@ import { Button } from "@material-ui/core";
 import ProductCard from "../components/ProductCard";
 import MainBanner from "components/MainBanner";
 import SuggestProducts from "features/suggestProducts";
-const StyledButton = styled(Button)`
-  color: blueviolet;
+
+const BodyWrapped = styled.div``;
+
+const Container = styled.div`
+  max-width: 1270px;
+  margin: auto;
 `;
 
 const IndexPage: NextPage = () => {
   return (
-    <>
-      <MainBanner />
-      <SuggestProducts />
-    </>
+    <BodyWrapped>
+      <Container>
+        <MainBanner />
+        <SuggestProducts />
+      </Container>
+    </BodyWrapped>
   );
 };
 
