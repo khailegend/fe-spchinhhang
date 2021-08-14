@@ -44,22 +44,25 @@ export default function SuggestProducts() {
         </Grid>
       </Grid>
       <Grid container spacing={1}>
-        <Grid item xs>
+        <Grid item xs={2}>
           <ProductCard />
         </Grid>
-        <Grid item xs>
+        <Grid item xs={2}>
           <ProductCard />
         </Grid>
-        <Grid item xs>
+        <Grid item xs={2}>
           <ProductCard />
         </Grid>
-        <Grid item xs>
+        <Grid item xs={2}>
           <ProductCard />
         </Grid>
-        <Grid item xs>
+        <Grid item xs={2}>
           <ProductCard />
         </Grid>
-        <Grid item xs>
+        <Grid item xs={2}>
+          <ProductCard />
+        </Grid>
+        <Grid item xs={2}>
           <ProductCard />
         </Grid>
       </Grid>
