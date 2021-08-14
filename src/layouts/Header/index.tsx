@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import Catalog from "./Catalog";
+import React from 'react';
+import styled from 'styled-components';
+import Catalog from './Catalog';
 
 const HeaderWrapped = styled.header`
   background: #1a94ff;
@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <HeaderWrapped>
       <Container>
-        <Catalog></Catalog>
+        <Catalog />
       </Container>
     </HeaderWrapped>
   );

@@ -1,16 +1,18 @@
-import React from "react";
-import styled from "styled-components";
-import ReorderIcon from "@material-ui/icons/Reorder";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import React from 'react';
+import styled from 'styled-components';
+import ReorderIcon from '@material-ui/icons/Reorder';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const CatalogWrapped = styled.div`
   color: white;
 `;
-const LogoCatalog = styled.div`
+
+const CatalogLogo = styled.div`
   display: flex;
   font-size: 30px;
 `;
-const TitleCatalog = styled.div`
+
+const CatalogTitle = styled.div`
   display: flex;
   padding-top: 4px;
   padding-left: 4px;
@@ -33,15 +35,15 @@ const IconDropDown = styled(ArrowDropDownIcon)`
 export default function Catalog() {
   return (
     <CatalogWrapped>
-      <LogoCatalog>
+      <CatalogLogo>
         <ReorderIcon style={{ fontSize: 40 }}></ReorderIcon>
-        <TitleCatalog>
+        <CatalogTitle>
           <SmallTitle>Danh mục </SmallTitle>
           <BigTitle>
             Sản phẩm <IconDropDown />
           </BigTitle>
-        </TitleCatalog>
-      </LogoCatalog>
+        </CatalogTitle>
+      </CatalogLogo>
     </CatalogWrapped>
   );
 }
