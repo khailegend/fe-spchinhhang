@@ -6,12 +6,10 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 const CatalogWrapped = styled.div`
   color: white;
 `;
-
 const CatalogLogo = styled.div`
   display: flex;
   font-size: 30px;
 `;
-
 const CatalogTitle = styled.div`
   display: flex;
   padding-top: 4px;
@@ -24,6 +22,7 @@ const SmallTitle = styled.span`
 const BigTitle = styled.span`
   font-weight: 600;
   font-size: 13px;
+  display: flex;
 `;
 
 const IconDropDown = styled(ArrowDropDownIcon)`
