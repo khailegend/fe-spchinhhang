@@ -25,20 +25,22 @@ const BigTitle = styled.span`
   display: flex;
 `;
 
-const StyledMenuIcon = styled(ReorderIcon)`
-  font-size: 40px;
+const IconDropDown = styled(ArrowDropDownIcon)`
+  && {
+    font-size: 15px;
+  }
 `;
 
 export default function Catalog() {
   return (
     <CatalogWrapped>
       <CatalogLogo>
-        <StyledMenuIcon />
+        <ReorderIcon style={{ fontSize: 40 }}></ReorderIcon>
         <CatalogTitle>
           <SmallTitle>Danh mục </SmallTitle>
           <BigTitle>
             <span>Sản phẩm</span>
-            <ArrowDropDownIcon style={{ fontSize: 18 }} />
+            <IconDropDown />
           </BigTitle>
         </CatalogTitle>
       </CatalogLogo>

@@ -1,25 +1,26 @@
-import type { NextPage } from 'next'
-import { Alert, AlertTitle } from '@material-ui/lab';
-import styled from 'styled-components';
-import { Button } from '@material-ui/core';
-import ProductCard from '../components/ProductCard';
+import type { NextPage } from "next";
+import styled from "styled-components";
+import { Button } from "@material-ui/core";
+import ProductCard from "../components/ProductCard";
+import MainBanner from "components/MainBanner";
+import SuggestProducts from "features/suggestProducts";
 
-const StyledButton = styled(Button)`
-  color: blueviolet;
-`
+const BodyWrapped = styled.div``;
+
+const Container = styled.div`
+  max-width: 1270px;
+  margin: auto;
+`;
 
 const IndexPage: NextPage = () => {
   return (
-    <>
-      <Alert severity="success">
-        <AlertTitle>Success</AlertTitle>
-        This is a success alert — <strong>check it out!</strong>
-      </Alert>
+    <BodyWrapped>
+      <Container>
+        <MainBanner />
+        <SuggestProducts />
+      </Container>
+    </BodyWrapped>
+  );
+};
 
-      <StyledButton variant="contained">Click me</StyledButton>
-      <ProductCard />
-    </>
-  )
-}
-
-export default IndexPage
+export default IndexPage;

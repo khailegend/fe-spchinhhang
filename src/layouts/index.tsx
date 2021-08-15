@@ -1,20 +1,18 @@
-import styled from 'styled-components';
-import Footer from './Footer';
-import Header from './Header';
+import styled from "styled-components";
+import Footer from "./Footer";
+import Header from "./Header";
 const StyledContent = styled.div`
-  padding: 2%;
-`
+  padding: 20px 54.5px;
+`;
 
 export default function AppLayout({ children }) {
   return (
     <>
       <Header />
 
-      <StyledContent>
-        {children}
-      </StyledContent>
+      <StyledContent>{children}</StyledContent>
 
       <Footer />
     </>
-  )
+  );
 }

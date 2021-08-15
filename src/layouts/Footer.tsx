@@ -1,16 +1,20 @@
-import styled from 'styled-components';
-import Typography from '@material-ui/core/Typography';
+import styled from "styled-components";
 
 const FooterWrapped = styled.div`
   margin-top: auto;
   background: grey;
-  padding: 5px;
-`
+  padding: 0 54.5px;
+`;
+
+const Container = styled.div`
+  max-width: 1270px;
+  margin: auto;
+`;
 
 export default function Footer() {
   return (
     <FooterWrapped>
-      <Typography variant="body1">This is my footer.</Typography>
+      <Container>This is my footer.</Container>
     </FooterWrapped>
-  )
+  );
 }
