@@ -9,11 +9,9 @@ export default function AppLayout({ children }) {
   return (
     <>
       <Header />
-
+      {/* {sdf} */}
       {/* <StyledContent>{children}</StyledContent> */}
-
-      {/* I changed this code */}
-
+      I changed this code "asfasd asdf"
       <Footer />
     </>
   );
