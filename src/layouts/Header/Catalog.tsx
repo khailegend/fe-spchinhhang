@@ -39,7 +39,8 @@ export default function Catalog() {
         <CatalogTitle>
           <SmallTitle>Danh mục </SmallTitle>
           <BigTitle>
-            Sản phẩm <IconDropDown />
+            <span>Sản phẩm</span>
+            <IconDropDown />
           </BigTitle>
         </CatalogTitle>
       </CatalogLogo>
