@@ -39,7 +39,7 @@ export default function Catalog() {
         <CatalogTitle>
           <SmallTitle>Danh mục </SmallTitle>
           <BigTitle>
-            <span>Sản phẩm</span>
+            {/* <span>Sản phẩm</span> */}
             <IconDropDown />
           </BigTitle>
         </CatalogTitle>
@@ -47,3 +47,5 @@ export default function Catalog() {
     </CatalogWrapped>
   );
 }
+
+// I have just change this code
