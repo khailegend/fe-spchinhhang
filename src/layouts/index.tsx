@@ -8,10 +8,11 @@ const StyledContent = styled.div`
 export default function AppLayout({ children }) {
   return (
     <>
+      {/* I want to add this */}
       <Header />
-      {/* {sdf} */}
-      {/* <StyledContent>{children}</StyledContent> */}
-      I changed this code "asfasd asdf"
+
+      <StyledContent>{children}</StyledContent>
+
       <Footer />
     </>
   );
