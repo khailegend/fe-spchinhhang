@@ -8,6 +8,7 @@ const HeaderWrapped = styled.header`
 `;
 
 const Container = styled.div`
+  display: flex;
   max-width: 1270px;
   margin: auto;
 `;
