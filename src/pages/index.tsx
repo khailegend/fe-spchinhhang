@@ -1,9 +1,7 @@
-import type { NextPage } from "next";
-import styled from "styled-components";
-import { Button } from "@material-ui/core";
-import ProductCard from "../components/ProductCard";
-import MainBanner from "components/MainBanner";
-import SuggestProducts from "features/suggestProducts";
+import type { NextPage } from 'next';
+import styled from 'styled-components';
+import MainBanner from 'components/MainBanner';
+import SuggestProducts from 'features/suggestProducts';
 
 const BodyWrapped = styled.div``;
 
