@@ -4,13 +4,6 @@ import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import { Paper } from '@material-ui/core';
 
-const SearchInput = styled(Autocomplete)`
-  && {
-    background-color: #ffffff;
-    margin-left: 16px;
-  }
-`;
-
 const CustomInput = styled.input`
   padding: 0 10px;
   font-family: Roboto;
@@ -172,11 +165,11 @@ export default function SearchBar() {
 
   return (
     <>
-      <SearchInput
+      <Autocomplete
         freeSolo
         options={data}
         getOptionLabel={(option) => option.title}
-        style={{ width: 590 }}
+        style={{ width: 590, marginLeft: '16px' }}
         size="small"
         renderInput={(params) => (
           <div ref={params.InputProps.ref}>
