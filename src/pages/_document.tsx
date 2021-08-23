@@ -1,10 +1,4 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class AppDocument extends Document {
@@ -15,8 +9,7 @@ export default class AppDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props: any) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props: any) => sheet.collectStyles(<App {...props} />)
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -27,7 +20,7 @@ export default class AppDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        )
       };
     } finally {
       sheet.seal();
@@ -36,11 +29,17 @@ export default class AppDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
-        <Main />
-        <div id="modal-root" />
-        <NextScript />
+          <Main />
+          <div id="modal-root" />
+          <NextScript />
         </body>
       </Html>
     );

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import ReorderIcon from '@material-ui/icons/Reorder';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import Menu from '@material-ui/core/Menu';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import TvSharpIcon from '@material-ui/icons/TvSharp';
 
 const CatalogWrapped = styled.div`
   color: white;
@@ -13,6 +15,7 @@ const CatalogLogo = styled.a`
   font-size: 30px;
   align-items: center;
   font-size: 13px;
+  cursor: pointer;
 `;
 const CatalogTitle = styled.div`
   display: flex;
@@ -22,11 +25,19 @@ const CatalogTitle = styled.div`
 `;
 const SmallTitle = styled.span`
   font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.45;
 `;
 const BigTitle = styled.span`
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 13px;
-  display: flex;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.54;
 `;
 
 const IconDropDown = styled(ArrowDropDownIcon)`
@@ -37,8 +48,13 @@ const IconDropDown = styled(ArrowDropDownIcon)`
 
 const CatalogMenu = styled(Menu)`
   && {
-    margin-top: 4%;
-    padding: 0;
+    display: flex;
+    .MuiMenu-paper {
+      margin: 46px 0 0 0;
+      ul {
+        padding: 0;
+      }
+    }
   }
 `;
 
@@ -55,13 +71,24 @@ const MenuItem = styled.li`
   &:hover {
     background-color: #1a94ff;
     border-color: #1a94ff;
-    color: white;
   }
 `;
 
 const MenuLink = styled.a`
-  align-items: center;
+  position: relative;
   display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 2;
+  color: rgb(68, 68, 68);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-decoration: none;
+  height: 100%;
+  &:hover {
+    color: white;
+  }
 `;
 
 const MenuTitle = styled.span`
@@ -69,43 +96,59 @@ const MenuTitle = styled.span`
   padding: 10px 10px;
 `;
 
+const IconWrap = styled.span`
+  text-align: center;
+  width: 39px;
+`;
+
 export default function Catalog() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+    if (anchorEl !== event.currentTarget) {
+      setAnchorEl(event.currentTarget);
+    }
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
+    if (anchorEl !== null) {
+      setAnchorEl(null);
+    }
   };
 
   return (
     <CatalogWrapped>
-      <CatalogLogo onMouseOver={handleClick} aria-controls="fade-menu" aria-haspopup="true">
+      <CatalogLogo onMouseOver={handleClick} aria-controls="catalog-menu" aria-haspopup="true">
         <ReorderIcon style={{ fontSize: 40 }}></ReorderIcon>
         <CatalogTitle>
-          <SmallTitle>Danh mục </SmallTitle>
+          <SmallTitle>Danh Mục </SmallTitle>
           <BigTitle>
-            <span>Sản phẩm</span>
+            <span>Sản Phẩm</span>
             <IconDropDown />
           </BigTitle>
         </CatalogTitle>
       </CatalogLogo>
-
       <CatalogMenu
-        id="fade-menu"
+        id="catalog-menu"
+        elevation={4}
         anchorEl={anchorEl}
-        keepMounted
         open={Boolean(anchorEl)}
-        onClose={handleClose}>
+        onClose={handleClose}
+        MenuListProps={{ onMouseLeave: handleClose }}
+        transitionDuration={0}>
         <MenuItem onClick={handleClose}>
           <MenuLink>
+            <IconWrap>
+              <PhoneAndroidIcon />
+            </IconWrap>
             <MenuTitle>Điện thoại - Máy tính bảng</MenuTitle>
           </MenuLink>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <MenuLink>
+            <IconWrap>
+              <TvSharpIcon />
+            </IconWrap>
             <MenuTitle>Điện tử - Điện lạnh</MenuTitle>
           </MenuLink>
         </MenuItem>

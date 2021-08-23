@@ -3,6 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 const StyledContent = styled.div`
   padding: 20px 54.5px;
+  background: #f4f4f4;
 `;
 
 export default function AppLayout({ children }) {
