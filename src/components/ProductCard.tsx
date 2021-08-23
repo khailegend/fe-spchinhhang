@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
+import Link from 'next/link';
 
 const StyledCard = styled(Card)`
   && {
@@ -18,7 +19,6 @@ const StyledCard = styled(Card)`
     justify-content: space-between;
     width: 100%;
     height: 100%;
-
     box-shadow: none;
   }
 `;
@@ -59,33 +59,35 @@ export default function ProductCard() {
     5: 'Excellent+'
   };
   return (
-    <StyledCard>
-      <CardMedia
-        component="img"
-        image="https://salt.tikicdn.com/cache/200x200/ts/product/96/d3/61/8d33e59e47c723186d2aa2c1f4bc10fb.jpg"
-        title="Contemplative Reptile"
-      />
-      <StyledCardContent>
-        <Title
-          variant="body2"
-          title="Điện Thoại Samsung Galaxy Note 10 (8GB/256GB) - Hàng Chính Hãng">
-          Điện Thoại Samsung Galaxy Note 10 (8GB/256GB) - Hàng Chính Hãng
-        </Title>
-        <div>
-          <Rating
-            name="hover-feedback"
-            value={value}
-            precision={0.5}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            onChangeActive={(event, newHover) => {
-              setHover(newHover);
-            }}
-          />
-          {value !== null && <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>}
-        </div>
-      </StyledCardContent>
-    </StyledCard>
+    <Link href="/products/1">
+      <StyledCard>
+        <CardMedia
+          component="img"
+          image="https://salt.tikicdn.com/cache/200x200/ts/product/96/d3/61/8d33e59e47c723186d2aa2c1f4bc10fb.jpg"
+          title="Contemplative Reptile"
+        />
+        <StyledCardContent>
+          <Title
+            variant="body2"
+            title="Điện Thoại Samsung Galaxy Note 10 (8GB/256GB) - Hàng Chính Hãng">
+            Điện Thoại Samsung Galaxy Note 10 (8GB/256GB) - Hàng Chính Hãng
+          </Title>
+          <div>
+            <Rating
+              name="hover-feedback"
+              value={value}
+              precision={0.5}
+              onChange={(event, newValue) => {
+                setValue(newValue);
+              }}
+              onChangeActive={(event, newHover) => {
+                setHover(newHover);
+              }}
+            />
+            {value !== null && <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>}
+          </div>
+        </StyledCardContent>
+      </StyledCard>
+    </Link>
   );
 }
