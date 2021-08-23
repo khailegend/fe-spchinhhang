@@ -49,8 +49,12 @@ const IconDropDown = styled(ArrowDropDownIcon)`
 const CatalogMenu = styled(Menu)`
   && {
     display: flex;
-    margin-top: 4%;
-    padding: 0;
+    .MuiMenu-paper {
+      margin: 46px 0 0 0;
+      ul {
+        padding: 0;
+      }
+    }
   }
 `;
 
@@ -107,16 +111,14 @@ export default function Catalog() {
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
+    if (anchorEl !== null) {
+      setAnchorEl(null);
+    }
   };
 
   return (
     <CatalogWrapped>
-      <CatalogLogo
-        onClick={handleClick}
-        onMouseOver={handleClick}
-        aria-controls="catalog-menu"
-        aria-haspopup="true">
+      <CatalogLogo onMouseOver={handleClick} aria-controls="catalog-menu" aria-haspopup="true">
         <ReorderIcon style={{ fontSize: 40 }}></ReorderIcon>
         <CatalogTitle>
           <SmallTitle>Danh Mục </SmallTitle>
@@ -128,10 +130,12 @@ export default function Catalog() {
       </CatalogLogo>
       <CatalogMenu
         id="catalog-menu"
+        elevation={4}
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        MenuListProps={{ onMouseLeave: handleClose }}>
+        MenuListProps={{ onMouseLeave: handleClose }}
+        transitionDuration={0}>
         <MenuItem onClick={handleClose}>
           <MenuLink>
             <IconWrap>
