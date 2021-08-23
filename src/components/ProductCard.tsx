@@ -19,7 +19,6 @@ const StyledCard = styled(Card)`
     justify-content: space-between;
     width: 100%;
     height: 100%;
-
     box-shadow: none;
   }
 `;
