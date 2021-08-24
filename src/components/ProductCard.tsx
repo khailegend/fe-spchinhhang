@@ -5,7 +5,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
 import Link from 'next/link';
 
 const StyledCard = styled(Card)`
@@ -43,21 +42,49 @@ const Title = styled(Typography)`
   }
 `;
 
+const Review = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const StyleRating = styled(Rating)`
+  && {
+    font-size: 14px;
+  }
+`;
+const Quanlity = styled.span`
+  font-size: 11px;
+  color: #787878;
+  ::before {
+    content: '|';
+    padding: 0 5px;
+  }
+`;
+
+const Price = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+`;
+
+const DiscountPrice = styled.span`
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0px 8px 0px 0px;
+`;
+
+const Discount = styled.span`
+  font-size: 13px;
+  line-height: 20px;
+  border-radius: 2px;
+  background: rgb(255, 66, 78);
+  color: white;
+  padding: 0px 2px;
+`;
+
 export default function ProductCard() {
-  const [value, setValue] = React.useState<number | null>(2);
-  const [hover, setHover] = React.useState(-1);
-  const labels: { [index: string]: string } = {
-    0.5: 'Useless',
-    1: 'Useless+',
-    1.5: 'Poor',
-    2: 'Poor+',
-    2.5: 'Ok',
-    3: 'Ok+',
-    3.5: 'Good',
-    4: 'Good+',
-    4.5: 'Excellent',
-    5: 'Excellent+'
-  };
+  const [value, setValue] = React.useState<number | null>(2.5);
+
   return (
     <Link href="/products/1">
       <StyledCard>
@@ -72,20 +99,14 @@ export default function ProductCard() {
             title="Điện Thoại Samsung Galaxy Note 10 (8GB/256GB) - Hàng Chính Hãng">
             Điện Thoại Samsung Galaxy Note 10 (8GB/256GB) - Hàng Chính Hãng
           </Title>
-          <div>
-            <Rating
-              name="hover-feedback"
-              value={value}
-              precision={0.5}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
-              onChangeActive={(event, newHover) => {
-                setHover(newHover);
-              }}
-            />
-            {value !== null && <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>}
-          </div>
+          <Review>
+            <StyleRating name="read-only" value={value} readOnly size="small" />
+            <Quanlity>Đã bán 960</Quanlity>
+          </Review>
+          <Price>
+            <DiscountPrice>11.590.000 ₫</DiscountPrice>
+            <Discount>-50%</Discount>
+          </Price>
         </StyledCardContent>
       </StyledCard>
     </Link>
