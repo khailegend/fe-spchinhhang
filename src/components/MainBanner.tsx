@@ -10,6 +10,7 @@ const StyledBanner = styled(Grid)`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 15px;
   }
 `;
 const GridRight = styled(Grid)`
@@ -18,11 +19,8 @@ const GridRight = styled(Grid)`
 `;
 
 const GridLeft = styled(Grid)`
-  display: flex;
-  flex-wrap: wrap;
   width: 408px;
   height: 274px;
-  overflow: hidden;
 `;
 const ImgLink = styled.a`
   object-fit: contain;
