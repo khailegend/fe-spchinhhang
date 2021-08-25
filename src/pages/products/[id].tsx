@@ -50,9 +50,15 @@ const ProductImage = styled.div`
   && {
     border-right: 1px solid #f4f4f4;
     .MuiPaper-root {
+      .MuiBox-root {
+        width: 444px;
+        height: 444px;
+      }
       .MuiTabs-root {
+        width: 444px;
         .MuiTabs-flexContainer {
           .MuiButtonBase-root {
+            min-width: 72px;
             .MuiTab-wrapper {
               img {
                 width: 64px;
@@ -149,7 +155,7 @@ function TabPanel(props: TabPanelProps) {
       id={`scrollable-prevent-tabpanel-${index}`}
       aria-labelledby={`scrollable-prevent-tab-${index}`}
       {...other}>
-      {value === index && <BoxPanel p={3}>{children}</BoxPanel>}
+      {value === index && <BoxPanel>{children}</BoxPanel>}
     </div>
   );
 }
@@ -168,7 +174,7 @@ function allyProps(index: any) {
 export default function ProductDetail() {
   const [value, setValue] = React.useState(1);
 
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+  const handleChangeTab = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
   return (
@@ -243,7 +249,9 @@ export default function ProductDetail() {
                 value={value}
                 indicatorColor="primary"
                 textColor="primary"
-                onChange={handleChange}
+                scrollButtons="auto"
+                variant="scrollable"
+                onChange={handleChangeTab}
                 aria-label="disabled tabs example">
                 <Tab
                   icon={
@@ -274,6 +282,36 @@ export default function ProductDetail() {
                   }
                   value={3}
                   {...allyProps(3)}
+                />
+                <Tab
+                  icon={
+                    <img
+                      src="https://salt.tikicdn.com/cache/100x100/ts/product/96/d3/61/8d33e59e47c723186d2aa2c1f4bc10fb.jpg"
+                      alt="img-tab"
+                    />
+                  }
+                  value={1}
+                  {...allyProps(1)}
+                />
+                <Tab
+                  icon={
+                    <img
+                      src="https://salt.tikicdn.com/cache/100x100/ts/product/96/d3/61/8d33e59e47c723186d2aa2c1f4bc10fb.jpg"
+                      alt="img-tab"
+                    />
+                  }
+                  value={1}
+                  {...allyProps(1)}
+                />
+                <Tab
+                  icon={
+                    <img
+                      src="https://salt.tikicdn.com/cache/100x100/ts/product/96/d3/61/8d33e59e47c723186d2aa2c1f4bc10fb.jpg"
+                      alt="img-tab"
+                    />
+                  }
+                  value={1}
+                  {...allyProps(1)}
                 />
               </Tabs>
             </Paper>
