@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Catalog from './Catalog';
-import SearchBar from './SearchBar';
+import Search from 'features/search/search';
 import Logo from './Logo';
 const HeaderWrapped = styled.header`
   background: #1a94ff;
@@ -20,7 +20,7 @@ export default function Header() {
       <Container>
         <Logo />
         <Catalog />
-        <SearchBar />
+        <Search />
       </Container>
     </HeaderWrapped>
   );

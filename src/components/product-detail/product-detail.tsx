@@ -65,7 +65,7 @@ export default function ProductDetails() {
     setValue(newValue);
   };
 
-  const handleChangeColor = (event) => {
+  const handleChangeColor = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       setColor(event.target.value);
     }
@@ -282,7 +282,7 @@ export default function ProductDetails() {
                   type="radio"
                   name="productColor"
                   value="Ánh cực quang"
-                  onClick={(e) => handleChangeColor(e)}
+                  onChange={(e) => handleChangeColor(e)}
                   defaultChecked
                 />
                 <div className="imgGroup">
@@ -299,7 +299,7 @@ export default function ProductDetails() {
                   type="radio"
                   name="productColor"
                   value="Đen pha lê"
-                  onClick={(e) => handleChangeColor(e)}
+                  onChange={(e) => handleChangeColor(e)}
                 />
                 <div className="imgGroup">
                   <img
